@@ -1,0 +1,20 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>현재 url을 가져와보자.</title>
+  </head>
+  <body>
+    <h1>현재 url을 가져와보자.</h1>
+    <p id="context"></p>
+    <p id="cookie"></p>
+    <button onclick="practFunction()">CLICK</button>
+    <script>
+      function practFunction() {
+        var x = document.baseURI;
+        document.getElementById("context").innerHTML = x;
+        document.body.style.background = "pink";
+      }
+    </script>
+  </body>
+</html>

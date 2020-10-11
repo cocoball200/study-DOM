@@ -1,0 +1,22 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>activeElement</title>
+  </head>
+  <body onclick="practFunction()">
+    <input type="text" value="이곳은 input" />
+    <button>버튼</button>
+    <p id="context"></p>
+
+    <script>
+      var context = document.getElementById("context");
+      function practFunction() {
+        var x = document.activeElement.tagName;
+        console.log(typeof x);
+        console.log(x);
+        context.innerHTML = x;
+      }
+    </script>
+  </body>
+</html>

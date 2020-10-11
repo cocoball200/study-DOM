@@ -1,0 +1,20 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anchor</title>
+  </head>
+  <body>
+    <a name="one">1</a>
+    <a name="two">2</a>
+    <a name="three">3</a>
+    <button onclick="practFunction()">click</button>
+    <p id="length"></p>
+    <script>
+      function practFunction() {
+        var anchor = document.anchors.length;
+        document.getElementById("length").innerHTML = anchor;
+      }
+    </script>
+  </body>
+</html>

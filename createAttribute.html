@@ -1,0 +1,31 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .createClass {
+        color: palegoldenrod;
+        background-color: palevioletred;
+      }
+      .createClass2 {
+        color: papayawhip;
+        background-color: purple;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello world</h1>
+    <h2>Hello Mia</h2>
+    <button onclick="practFunction()">Click me class</button>
+    <script>
+      function practFunction() {
+        var h1 = document.getElementsByTagName("H1")[0];
+        var attr = document.createAttribute("CLASS");
+
+        attr.value = "createClass";
+        h1.setAttributeNode(attr);
+      }
+    </script>
+  </body>
+</html>
