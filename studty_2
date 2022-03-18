@@ -1,0 +1,61 @@
+자바스크립트의 Object, property 
+
+- 함수 실행 단계
+    - 호출 전: 함수 실행을 위한 기반 환경 설정
+    - 함수 호출 : 함수를 호출하여 함수 실행
+    
+- 함수 실행을 위한 기반 환경 설정
+    - function 오브젝트로 생성 (object가 되어야 함수를 실행할 수 있다)
+    - 스코프 설정 (함수가 속한 , 자바스크립트는 정적 스코프 입니다.)
+    - 이 단계의 키워드는 오브젝트, 프로퍼티
+    
+     
+    
+- 함수를 호출하여 함수 실행
+    - 함수가 실행되는 환경을 만들고
+    - 함수 블록의 코드를 실행합니다.
+    - 이 단계의 키워드는 실행 콘텍스트
+        - 함수가 실행되면 엔진이 실행 콘텍스트를 만든다. 콘텍스트안에 함수가 실행하는 환경을 설정하고, 함수 블락의 코드를 실행한다.
+
+오브젝트, 프로퍼티
+
+- ECMAScript Overview is object-based
+    - 오브젝트에 의해 기본 언어와 host facilities가 제공된다
+    - host environment 가 제공하는  host facilities
+        1. const sports = [”체조", “펜싱"];
+            1. Array 리터럴로 Array 오브젝트 인스턴스를 생성합니다.
+            2. new Array(”체조",”펜싱")로 생성한 것과 같다. 
+            3. 자바스크립트 엔진이 []을 해석하면 new Array()를 실행한다. 
+        2. console.log("1", sports instanceof Array);
+            1. sports 변수에 설정된 오브젝트가 빌트인 Array오브젝트로 생성한 인스턴스인 것을 체크하며, true 출력. 
+            2. instanceof에서 instance는 new 연산자로 생성한 인스턴스를 의미한다.  
+            
+        3. new 연산자로 생성한 것을 인스턴스라고 부르지만
+            1. 자바스크립트 개발자는 구분하지 않고 오브젝트라고 부른다
+            2. new 연산자를 사용하지 않아도 인스턴스가 생성되는 자바스크립트 언어의 특성 때문이라고 생각합니다. 
+            3. 구분이 필요할 때는 인스턴스로 부르는 것이 좋습니다. new 연산자로 오브젝트를 생성한다
+            4. 스펙의 objects는 오브젝트와 인스턴스의 통칭이다.
+            
+        4. communicate.split(”,”)로 배열이 출력
+            1. communicate는 primitive type임으로 split()매서드가 없다.
+            2. 하지만 split() 메소드가 호출되는 것은 엔진이 String 인스턴스를 생성하여 메소드를 호출하기 때문 
+            
+             
+            
+    
+    ```python
+    const sports = ["체조" , "펜싱"] 
+    console.log("1", sports instanceof Array);
+    
+    const communicate = sports.join(",");
+    console.log("2", communicate);
+    console.log("3", communicate.split(","));
+    ```
+    
+     
+    
+    - 오브젝트를 제공하는 것은 오브젝트와 더불어 그 안에 작성된 프로퍼티와 메소드를 제공한다는 것
+    - ECMAScript 프로그램은 상호작용 오브젝트(array, fuinction)의 집합체이다.
+    - 오브젝트는 0개 이상의 프로퍼티로 이루어진 집합체이다.
+    - 프로퍼티는 속성을 가지고 있고, 속성은 어떻게 각각의 프로퍼티가 사용될지를 결정한다.
+    - 프로퍼티는 다른 오브젝트와, 기본 값, 함수들을 가지는 컨테이너이이다.
