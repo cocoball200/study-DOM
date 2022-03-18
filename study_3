@@ -1,0 +1,108 @@
+# function, method, Global Object
+
+a function is a callable object
+
+A function that is associated with an object via a property is a method
+
+- 프로토 타입에 object을 연결하면 함수가 아니라 메서드이다.
+- Array.isArray() / Array.prototype.concat()
+
+함수와 메소드를 구분해야 하는 이유
+
+- function이 작성된 위치 즉, 구조가 다르기 때문에
+- 함수는 인스턴스에 포함되지 않음
+- 코딩형태가 다름
+
+- 함수는 호출할 수 있고, 함수가 호출할 수 있는 것은 빌트인 Function 오브젝트로 만든 오브젝트여서.
+- 자바스크립트 엔진이 펀션 키워드를 만드면 빌트인 펀션 오브젝트로 펀션 오브젝트를 만든다.
+- 프로퍼티는 키는 getTitle, 프로퍼티 값은 function object (function getTitle(){}) 이다.
+    
+    ```python
+    function getTitle(){
+    return "callable"
+    }
+    getTitle()
+    ```
+    
+
+```python
+
+const values = [1,2,3]
+Array.isArray(values)
+```
+
+- Array.isArray(values)
+- Array는 빌트인 오브젝트이다.
+- **인스턴스.function() 형태가 아닌 오브젝트.functionn() 형태일 때 function 함수라고 한다.**
+
+```python
+class Sports {
+	static getItem(){
+		return "펜싱"
+}
+}
+```
+
+- class는 먼저 new 연산자로 인스턴스를 생성하고, 인스턴스.function() 형태로 호출합니다.
+- static getItem(){...}을 static 메소드라고 부르지만 Sports.getItem() 형태로 호출하므로 함수라고 할 수 있다.
+- static 메소드는 인스턴스에 설정되지 않는다. 스펙에 static 메소드라고 기술되어 있다.
+
+```python
+function Point(point){
+			this.point = point;
+}
+
+Point.prototype.getPoint = function(){
+			return this.point
+}
+
+const instance = new Point(100);
+log(instance.getPoint)
+
+const values = [1,2,3];
+log(Array.prototype.join.call(values,""));
+
+class Sports {
+	getItem(){
+			return "스키"	
+	}
+}
+
+const winter = new Sports();
+log(winter.getItem)
+```
+
+- function 키워드로 Point 선언하고
+- Point.prototype.getPoint를 연결하고 값으로 function object 연결했다.
+- 프로토타입은 설정하면 new Instance로 생성하는 것이 관례
+- **log(instance.getPoint) 는 메소드이다. prototype에 연결되어 있기 때문이다.** (instance**,__proto__**.getPoint) **,__proto__(생략가능)**
+- Array.prototype.join.call(values,"")
+    - Array의 프로토타입의 join 메서드의 call 메서드로 호출한다.
+    
+- Sprots class를 작성했고, getItem 메소드를 작성하였다. (static 작성하지 않음)
+- 인스턴스로 생성하여. winter.getItem() 인스턴스의 메소드로 호출.
+- **class에서 작성한 function은 메소드이다.**
+
+# 함수와 메서드를 구분해서 알아야 하는 이유
+
+- 프로토타입 쉐어 매커니즘으로, 100개의 인스턴스를 만들면 100개의 참조가 생긴다.
+- 인스턴스가 많아지면 그만큼 메모리를 사용하게 된다.
+- 함수는 이러한 처리를 하지 않아도 된다. 하나밖에 없기때문에.
+- 이러한 장단점을 시스템 설정에 생각해야 한다.
+
+# Global Object는
+
+Global Object의 프로퍼티 
+
+- NaN, Infinity, undefined, globalThis  ⇒ 프로퍼티이고, 프로퍼티 key가 있다.
+
+Global Object 함수
+
+- eval(), parseInt() , parseFloat(), isNaN(), isFinite()
+
+Global Object도 오브젝트이며 오브젝트 이름이 Global입니다.
+
+- 다만 Global Object의 프로퍼티와 함수가 window 오브젝트에 설정되는 것이다.
+- window 오브젝트 이름은 window이며, 자바스크립트에서 만든 오브젝트가 아니다.
+
+Global Object를 전역객체로 표기하는 것은 오브젝트 이름을 바꾼 것으로, Sting Object를 문자 객체라고 하는 것과 같다. 즉 전역은 오브젝트 이름이 아니다. 그럼으로 글로벌 오브젝트로 말하는게 좋음
