@@ -1,0 +1,51 @@
+# Buit-in
+
+- 값, 타입, 연산잔, 오브젝트를 사전에 만들어 놓은 것
+- undefined,, Null,Boolean ,Number,String ,Object
+
+- 빌트인 Number 오브젝트
+- 11개의 오브젝트를 가지고 있음
+- number, string, boolean, object, array, function, Math, date,json, regexp, global 오브젝트
+
+- 함수와 프로퍼티
+- new Number() 인스턴스 생성하는 함수이고
+- Number() ⇒ 함수
+- new 연산자 ⇒ buitin 아님
+- new 연산자로 인스턴스를 생헝하여 반환한다. 이는 Number 오브젝트로 인스턴스를 생성하여 반환하고, 원본을 복사하는 개념이다. new 연산자를 사용하면 인스턴스이다.
+- 인스턴스를 생성하는 이유는 인스턴스마다 값을 갖기 위한 것 Number 인스턴스를 생성하는 목적은 표시된 함수를 사용하기 위해서 이다.
+    - const object = new Number()
+    - 빌트인 Number 오브젝트로 인스턴스를 생성한다.
+    - 생성한 인스턴스 타입은 object
+    - 생성한 Number 인스턴스를 반환한다.
+    - 인스턴스를 만들면 프로토타입만 복사한다.
+    - 인스턴스를 만드는 기준은 프로토타입에 연결되어 있는 함수를 복사해서 받고, 프로토타입이 아닌 것은 할당해주지 않고 가려서 준다.  그러므로 프로토타입은 아닌 것은 원본을 와서 봐야 한다.
+    
+    프리미티 값
+    
+    - 언어에 있어서 가장 낮은 단계의 값
+    - const book = “book”
+    - “book”은 더 이상 분해, 전개 불가
+    - 프리미티브 타입은 NUmber, String, Boolean: 인스턴스 생성 가능
+    - Null, Undefined: 인스턴스 생성 불가
+    - Object는 프리미티브 값을 제공하지 않음 ⇒ 전개할 수 있음 , protorype있음
+    - new Number() ⇒   prototype제공  [[PrimitiveValue]] : 456 자바스크립트 엔진이 만들었다는 것,
+    
+    인스턴스의 프리미티브 값
+    
+    - var obj = new Number(123)
+    - 인스턴스를 생성하면 파라미터 값을 인스턴스의 프리미티브 값으로 설정
+    - 
+    
+    ```python
+    let obj = new Number(123)
+    log(obj+ 200)
+    ```
+    
+    - 인스턴스를 생성하여 obj에 할당 한 후 obj의 [[PrimitiveValue]] 123을 할당하며 [[PrimitiveValue]] + 200 값을 더한다.
+    - 20..toString() 에러가 안난다. 에러는 20.toString()
+    - toLocaleString
+    - 숫자를 브라우저가 지원하는 지역화 문자로 변화
+    - 지역화 지원 및 형태를 브라우저 개발사에 일임
+    - 지역화를 지원하지 않으면 toString()으로 변화
+    - toExponential(3) 고정 소숫점 표기로 변환하여 문자열로 반환
+    - toFixed 고정 소숫점 표기로 변환하여 문자열 반환
